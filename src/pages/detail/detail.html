@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>西班牙制造</title>
+    <link rel="stylesheet" href="../../css/pages/home/index.css">
+    <link rel="stylesheet" href="../../css/pages/detail/detail.css">
+</head>
+
+<body>
+    <!-- 版心1090 -->
+    <!-- 网页头 开始 -->
+    <div class="head">
+        <div class="top">
+            <div>
+                <div class="top-hint">
+                    <ul id="top-hint">
+                        <li><a href=""></a></li>
+                    </ul>
+                </div>
+                <div class="top-nav">
+                    <ul>
+                        <li id="user">
+                            <a id="login" href="#">登录</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href="http://localhost:9999/pages/login/login_email.html">注册</a>
+                        </li>
+                        <li><a href="#">我的订单</a></li>
+                        <li><a href="#">会员</a></li>
+                        <li><a href="#">甄选家</a></li>
+                        <li><a href="#">企业采购</a><span class="top-nav-bgJiantou"></span></li>
+                        <li><a href="#">客户服务</a><span class="top-nav-bgJiantou"></span></li>
+                        <li><span class="top-nav-bgPhone"></span><a href="#">APP</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="fun">
+            <div>
+                <a class="logo" href="http://localhost:9999/pages/home/index.html"></a>
+                <div class="cart">
+                    <span class="icon-cart"></span>
+                    <i>购物车</i>
+                    <span class="num-cart">0</span>
+                </div>
+                <div class="search">
+                    <span class="icon-search"></span>
+                    <input class="input-search" type="search">
+                    <div class="submit-search">
+                        <span>搜索</span>
+                    </div>
+                    <div class="hint-search"></div>
+                </div>
+                <div class="hot">
+                    <div class="hotkey">
+                        <div>
+                            <a hotkey href=""></a>
+                            <a hotkey href=""></a>
+                            <a hotkey href=""></a>
+                            <a class="no-border" hotkey href=""></a>
+                        </div>
+                        <div>
+                            <a hotkey href=""></a>
+                            <a hotkey href=""></a>
+                            <a hotkey href=""></a>
+                            <a class="no-border" hotkey href=""></a>
+                        </div>
+                        <div class="hotkey1">
+                            <a hotkey href=""></a>
+                            <a hotkey href=""></a>
+                            <a hotkey href=""></a>
+                            <a class="no-border" hotkey href=""></a>
+                        </div>
+                    </div>
+                </div>
+                <script id="listOfNav" type="text/html">
+                    <div>
+                        <div class="list-details">
+                            {{each subCateGroupList}}
+                            <div class="list2">
+                                <div class="details-title">{{$value.name}}</div>
+                                {{include 'listOfNav2' $value}}
+                            </div>
+                            {{/each}}
+                        </div>
+                    </div>
+                </script>
+                <script id="listOfNav2" type="text/html">
+                    {{each categoryList}}
+                    <a class="list3"
+                        href="http://you.163.com/item/list?categoryId={{$value.superCategoryId}}&subCategoryId={{$value.id}}">
+                        <img src="{{$value.bannerUrl}}" alt="">
+                        <span>{{$value.name}}</span>
+                    </a>
+                    {{/each}}
+                </script>
+                <div id="top-nav">
+                    <ul>
+                        <li>
+                            <a class="nav-list-item" href="">首页</a>
+                        </li>
+                        <li class="segmentation"></li>
+                        <li>
+                            <a class="nav-list-item" href="">为你严选</a>
+                        </li>
+                        <li>
+                            <a class="nav-list-item" href="">众筹</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 网页头 结束 -->
+    <!-- 商品详情 开始 -->
+    <div class="navigation">
+        <div>
+            <div>
+                <div class="navigation_item">
+                    <a href="/pages/home/index.html">首页</a>
+                    <i>></i>
+                </div>
+                <div class="navigation_item">
+                    <a href="/">全球特色</a>
+                    <i>></i>
+                </div>
+                <div class="navigation_item">
+                    <a class="preItem pName" href="/"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="detailHd">
+        <div>
+            <div class="img_list">
+                <div class="glass">
+                    <div class="imgBox">
+                        <img src=""
+                            alt="">
+                    </div>
+                </div>
+                <div class="list">
+                </div>
+            </div>
+            <div class="detail_info">
+                <div class="detail_tag">
+                    <div class="tagInfo">
+                        <a class="tag_new" href="">新品</a>
+                        <a class="tag_man" href="">西班牙制造商</a>
+                    </div>
+                    <div class="detail_name">
+                        <span></span>
+                    </div>
+                    <div class="detail_desc">
+                        <span>用高浓度鲜活成分锁住鲜活年轻光采</span>
+                    </div>
+                </div>
+                <div class="price">
+                    <div class="_price">
+                        <div class="price_tag">价格</div>
+                        <div class="p_p">￥</div>
+                        <div class="p_num">199</div>
+                    </div>
+                    <div class="vip">
+                        <div class="open">
+                            <i class="vip_icon"></i>
+                            <span>超级会员专享价¥189.1, 可省<strong>¥9.9</strong></span>
+                        </div>
+                        <p>520开卡限时特惠，年卡直降20/季卡仅需49</p>
+                    </div>
+                    <div class="fanxian">
+                        <div class="tag">购物返</div>
+                        <span>新用户最高返</span>
+                        <span class="red">¥1.99回馈金 + 19积分</span>
+                    </div>
+                    <div class="lingquan">
+                        <div class="tag">领券</div>
+                        <span class="red">85折券</span>
+                        <span class="red">领取</span>
+                    </div>
+                    <hr class="hr">
+                    <div class="fuwu">
+                        <div class="tag">服务</div>
+                        <div class="fuwu_item"><span>·&nbsp;</span>支持7天无忧退换货<span>&nbsp;&nbsp;&nbsp;</span></div>
+                        <div class="fuwu_item"><span>·&nbsp;</span>48小时快速退款<span>&nbsp;&nbsp;&nbsp;</span></div>
+                        <div class="fuwu_item"><span>·&nbsp;</span>满88免邮费<span>&nbsp;&nbsp;&nbsp;</span></div>
+                        <div class="fuwu_item"><span>·&nbsp;</span>国内部分地区无法配送<span>&nbsp;&nbsp;&nbsp;</span></div>
+                    </div>
+                </div>
+                <!-- 规格 -->
+                <div class="guige">
+                    <div class="tag">规格</div>
+                    <ul class="ggg">
+                        <script id="pGuige" type="text/html">
+                            {{each guige}}
+                            <li>
+                                <img src="{{$value.picUrl}}"
+                                    alt="{{$value.value}}">
+                                <div>{{$value.value}}</div>
+                            </li>
+                            {{/each}}
+                        </script>
+                    </ul>
+                </div>
+                <!-- 数量 -->
+                <div class="cart_num">
+                    <div class="tag">数量</div>
+                    <div class="selnum">
+                        <span class="min">
+                            <i class="h"></i>
+                        </span>
+                        <input value="1" class="num" name="cartNum" type="text">
+                        <span class="add">
+                            <i class="h"></i>
+                            <i class="s"></i>
+                        </span>
+                    </div>
+                </div>
+                <!-- 添加购物车按钮 -->
+                <div class="btns">
+                    <a class="buyNow">
+                        <span>立即购买</span>
+                    </a>
+                    <a class="addCart" >
+                        <span>加入购物车</span>
+                    </a>
+                    <div></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- 商品详情 结束 -->
+
+</body>
+<script src="../../static/js/require.js" data-main="../home/index.js"></script>
+<script src="./detail.js"></script>
+
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>网易严选</title>
+    <link rel="stylesheet" href="../../css/pages/home/index.css">
+</head>
+
+<body>
+    <!-- 版心1090 -->
+    <!-- 网页头 开始 -->
+    <div class="head">
+        <div class="top">
+            <div>
+                <div class="top-hint">
+                    <ul id="top-hint">
+                        <li><a href=""></a></li>
+                    </ul>
+                </div>
+                <div class="top-nav">
+                    <ul>
+                        <li id="user">
+                            <a id="login" href="#">登录</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href="http://localhost:9999/pages/login/login_email.html">注册</a>
+                        </li>
+                        <li><a href="#">我的订单</a></li>
+                        <li><a href="#">会员</a></li>
+                        <li><a href="#">甄选家</a></li>
+                        <li><a href="#">企业采购</a><span class="top-nav-bgJiantou"></span></li>
+                        <li><a href="#">客户服务</a><span class="top-nav-bgJiantou"></span></li>
+                        <li><span class="top-nav-bgPhone"></span><a href="#">APP</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="fun">
+            <div>
+                <a class="logo" href=""></a>
+                <div class="cart">
+                    <span class="icon-cart"></span>
+                    <i>购物车</i>
+                    <span class="num-cart">0</span>
+                </div>
+                <div class="search">
+                    <span class="icon-search"></span>
+                    <input class="input-search" type="search">
+                    <div class="submit-search">
+                        <span>搜索</span>
+                    </div>
+                    <div class="hint-search"></div>
+                </div>
+                <div class="hot">
+                    <div class="hotkey">
+                        <div>
+                            <a hotkey href=""></a>
+                            <a hotkey href=""></a>
+                            <a hotkey href=""></a>
+                            <a class="no-border" hotkey href=""></a>
+                        </div>
+                        <div>
+                            <a hotkey href=""></a>
+                            <a hotkey href=""></a>
+                            <a hotkey href=""></a>
+                            <a class="no-border" hotkey href=""></a>
+                        </div>
+                        <div class="hotkey1">
+                            <a hotkey href=""></a>
+                            <a hotkey href=""></a>
+                            <a hotkey href=""></a>
+                            <a class="no-border" hotkey href=""></a>
+                        </div>
+                    </div>
+                </div>
+                <script id="listOfNav" type="text/html">
+                    <div>
+                        <div class="list-details">
+                            {{each subCateGroupList}}
+                            <div class="list2">
+                                <div class="details-title">{{$value.name}}</div>
+                                {{include 'listOfNav2' $value}}
+                            </div>
+                            {{/each}}
+                        </div>
+                    </div>
+                </script>
+                <script id="listOfNav2" type="text/html">
+                    {{each categoryList}}
+                    <a class="list3"
+                        href="http://you.163.com/item/list?categoryId={{$value.superCategoryId}}&subCategoryId={{$value.id}}">
+                        <img src="{{$value.bannerUrl}}" alt="">
+                        <span>{{$value.name}}</span>
+                    </a>
+                    {{/each}}
+                </script>
+                <div id="top-nav">
+                    <ul>
+                        <li>
+                            <a class="nav-list-item" href="">首页</a>
+                        </li>
+                        <li class="segmentation"></li>
+                        <li>
+                            <a class="nav-list-item" href="">为你严选</a>
+                        </li>
+                        <li>
+                            <a class="nav-list-item" href="">众筹</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 网页头 结束 -->
+    <!-- 广告轮播 开始 -->
+    <div class="banner">
+        <div id="banner_top" class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide banner_list"><a href="#"><img src="../../img/banner1.jpg" alt=""></a></div>
+                <div class="swiper-slide banner_list"><a href="#"><img src="../../img/banner2.jpg" alt=""></a></div>
+                <div class="swiper-slide banner_list"><a href="#"><img src="../../img/banner3.jpg" alt=""></a></div>
+                <div class="swiper-slide banner_list"><a href="#"><img src="../../img/banner4.jpg" alt=""></a></div>
+                <div class="swiper-slide banner_list"><a href="#"><img src="../../img/banner5.jpg" alt=""></a></div>
+                <div class="swiper-slide banner_list"><a href="#"><img src="../../img/banner6.jpg" alt=""></a></div>
+                <div class="swiper-slide banner_list"><a href="#"><img src="../../img/banner7.jpg" alt=""></a></div>
+                <div class="swiper-slide banner_list"><a href="#"><img src="../../img/banner8.jpg" alt=""></a></div>
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
+
+            <!-- 如果需要导航按钮 -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+    <!-- 广告轮播 结束 -->
+    <div class="manufacturer">
+        <div>
+            <div class="man_title">
+                <a class="tit" href="#">
+                    <h3>品牌制造商</h3>
+                </a>
+                <span>工厂直达消费者，剔除品牌溢价</span>
+                <a class="man_more" href="#">更多制造商></a>
+            </div>
+            <div class="man_list">
+                <a class="list_item" href="../item/manufacturer.html?sort=1">
+                    <div class="mask"></div>
+                    <div class="list_name">
+                        <span class="l_name">海外制造商</span>
+                        <span class="l_new">上新</span>
+                    </div>
+                    <div class="list_price">9.9元起</div>
+                    <div class="list_img">
+                        <img src="../../img/74e2ea8f81004d0a60f90fc8e4649058.png" alt="">
+                    </div>
+                </a>
+                <a class="list_item item_left" href="../item/manufacturer.html?sort=2">
+                    <div class="mask"></div>
+                    <div class="list_name">
+                        <span class="l_name">CK制造商</span>
+                    </div>
+                    <div class="list_price">29.9元起</div>
+                    <div class="list_img">
+                        <img src="../../img/c097be14110f769d58245cdad73e15c3.png" alt="">
+                    </div>
+                </a>
+                <a class="list_item item_left list_left" href="../item/manufacturer.html?sort=3">
+                    <div class="mask"></div>
+                    <div class="list_name">
+                        <span class="l_name">新秀丽制造商</span>
+                    </div>
+                    <div class="list_price">34.9元起</div>
+                    <div class="list_img">
+                        <img src="../../img/2ef40536e86eba997dc17cab62697a44.png" alt="">
+                    </div>
+                </a>
+                <a class="list_item item_left list_left item_top" href="../item/manufacturer.html?sort=4">
+                    <div class="mask"></div>
+                    <div class="list_name">
+                        <span class="l_name">Nine West制造商</span>
+                    </div>
+                    <div class="list_price">219元起</div>
+                    <div class="list_img">
+                        <img src="../../img/e3bcfdff30c97ba87d510da8d9da5d09.png" alt="">
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+    <!-- 品牌制造商模版 开始 -->
+    <script type="text/html" id="pSort">
+        {{each sort}}
+        <div class="manufacturer">
+            <div>
+                <div class="man_title">
+                    <a class="tit" href="#">
+                        <h3>品牌制造商</h3>
+                    </a>
+                    <span>工厂直达消费者，剔除品牌溢价</span>
+                    <a class="man_more" href="#">更多制造商></a>
+                </div>
+                <div class="man_list">
+                    <a class="list_item" href="../item/manufacturer.html?sort=1">
+                        <div class="mask"></div>
+                        <div class="list_name">
+                            <span class="l_name">{{$value[0].name}}</span>
+                            <span class="l_new">上新</span>
+                        </div>
+                        <div class="list_price">{{$value[0].retailPrice}}元起</div>
+                        <div class="list_img list_img_sp">
+                            <img src="{{$value[0].listPicUrl}}" alt="{{$value[0].id}}">
+                        </div>
+                    </a>
+                    <a class="list_item item_left" href="../item/manufacturer.html?sort=2">
+                        <div class="mask"></div>
+                        <div class="list_name">
+                            <span class="l_name">{{$value[1].name}}</span>
+                        </div>
+                        <div class="list_price">{{$value[1].retailPrice}}元起</div>
+                        <div class="list_img list_img_sp">
+                            <img src="{{$value[1].listPicUrl}}" alt="{{$value[1].id}}">
+                        </div>
+                    </a>
+                    <a class="list_item item_left list_left" href="../item/manufacturer.html?sort=3">
+                        <div class="mask"></div>
+                        <div class="list_name">
+                            <span class="l_name">{{$value[2].name}}</span>
+                        </div>
+                        <div class="list_price">{{$value[2].retailPrice}}元起</div>
+                        <div class="list_img">
+                            <img src="{{$value[2].listPicUrl}}" alt="{{$value[2].id}}">
+                        </div>
+                    </a>
+                    <a class="list_item item_left list_left item_top" href="../item/manufacturer.html?sort=4">
+                        <div class="mask"></div>
+                        <div class="list_name">
+                            <span class="l_name">{{$value[3].name}}</span>
+                        </div>
+                        <div class="list_price">{{$value[3].retailPrice}}元起</div>
+                        <div class="list_img">
+                            <img src="{{$value[3].listPicUrl}}" alt="{{$value[3].id}}">
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+        {{/each}}
+    </script>
+    <!-- 999 -->
+    <!-- 品牌制造商模版 结束 -->
+</body>
+<script src="../../static/js/require.js" data-main="index.js"></script>
+
+</html>

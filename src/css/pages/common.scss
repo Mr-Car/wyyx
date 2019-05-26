@@ -1,0 +1,35 @@
+body,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+form,
+ul,
+ol {
+    margin: 0px;
+    padding: 0px;
+}
+a{
+    text-decoration: none;
+    color: #000000;
+}
+li{
+    list-style: none;
+}
+.no-border{
+    border: 0 !important;
+}
+%center {
+    width: 1090px;
+    margin: 0 auto;
+}
+$bg-333:#333333;
+$wy-zong:#B4A078; // 网易棕色
+$imgUrl:"../../../img/";
+$yxtop-icon:"icon_yxtop_sbc152a7ee5_e7ebdc8b2c.png";
+$yx-hui:#999999;

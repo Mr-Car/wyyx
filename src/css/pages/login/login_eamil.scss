@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #EFEFEF;
+    font-family: "Microsoft YaHei", "微软雅黑", "宋体", helvetica, "Hiragino Sans GB";
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+%center {
+    width: 1000px;
+    margin: auto;
+}
+
+header {
+    height: 130px;
+    overflow: hidden;
+
+    .cen {
+        @extend %center;
+
+        .logo {
+            width: 300px;
+            height: 60px;
+            margin-top: 35px;
+            float: left;
+            background: url(../../../img/sprite.png) no-repeat -50px -18px;
+        }
+
+        .login {
+            font-size: 18px;
+            width: 144px;
+            height: 20px;
+            margin-top: 50px;
+            float: right;
+        }
+    }
+}
+
+section {
+    height: 963px;
+
+    >div {
+        @extend %center;
+        background: #ffffff;
+        border-radius: 6px;
+        box-shadow: 0 3px 3px #cbc9c9;
+        margin-bottom: 55px;
+
+        .tag {
+            height: 40px;
+            width: 320px;
+            margin: 0 340px;
+            padding: 44px 0 24px 0;
+            overflow: hidden;
+            font-size: 16px;
+            text-align: center;
+            line-height: 38px;
+
+            .left {
+                width: 158px;
+                height: 38px;
+                border: 1px solid #ca5252;
+                color: #ffffff;
+                float: left;
+                background: #ca5252;
+            }
+
+            .right {
+                color: #000;
+                display: block;
+                float: left;
+                width: 158px;
+                height: 38px;
+                border: 1px solid #ccc;
+                border-left: 0;
+            }
+        }
+
+        .error{
+            color: red;
+        }
+        form {
+            >div {
+                height: 72px;
+                overflow: hidden;
+
+                .lab {
+                    float: left;
+                    width: 340px;
+                    height: 45px;
+                    line-height: 45px;
+                    margin-top: 12px;
+                    text-align: right;
+                }
+
+                input {
+                    vertical-align: top;
+                    float: left;
+                    width: 280px;
+                    height: 44px;
+                    padding-right: 40px;
+                    margin-top: 12px;
+                    border: 1px solid #ddd;
+                    color: #BDBDBD;
+                    font-size: 16px;
+                    text-indent: 0.5em;
+                }
+            }
+
+            .short {
+                input {
+                    width: 150px;
+                }
+
+                span {
+                    float: left;
+                    height: 46px;
+                    width: 120px;
+                    font-size: 16px;
+                    line-height: 46px;
+                    margin: 12px 0 0 10px;
+                    color: #fff;
+                    background: #2c82ff;
+                    text-align: center;
+                    cursor: pointer;
+                }
+            }
+
+            .submit {
+                width: 322px;
+                margin: 0 auto;
+
+                #submit_btn {
+                    width: 320px;
+                    font-size: 18px;
+                    background: #CA5252;
+                    color: #ffffff;
+                    padding: 0;
+                }
+            }
+        }
+    }
+}

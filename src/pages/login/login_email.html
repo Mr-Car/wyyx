@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>网易账号中心</title>
+    <link rel="stylesheet" href="../../css/pages/login/login_eamil.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="cen">
+            <div class="logo"></div>
+            <div class="login">已有帐号？去<a href="#">登录</a></div>
+        </div>
+    </header>
+    <section>
+        <div>
+            <div class="tag">
+                <div class="left">普通帐号注册</div>
+                <a href="#" class="right">靓号注册</a>
+            </div>
+            <form id="userRegister" method="get" action="http://localhost:9999/pages/login/zhuce.html">
+                <div>
+                    <label class="lab" for="userId">帐号：</label>
+                    <input id="userId" name="userId" type="text" placeholder="输入你的账号">
+                </div>
+                <div>
+                    <label class="lab" for="userPwd">密码：</label>
+                    <input id="userPwd" name="userPwd" type="text" placeholder="6-16密码，区分大小写">
+                </div>
+                <div>
+                    <label class="lab" for="RuserPwd">确认密码：</label>
+                    <input id="RuserPwd" name="RuserPwd" type="text" placeholder="再次输入密码">
+                </div>
+                <div>
+                    <label class="lab" for="userPhone">手机号：</label>
+                    <input id="userPhone" name="userPhone" type="text" placeholder="11位手机号">
+                </div>
+                <div class="short">
+                    <label class="lab" for="shortM">短信验证码：</label>
+                    <input type="text" id="shortM" name="shortM" placeholder="输入短信验证码">
+                    <span>获取验证码</span>
+                </div>
+                <div class="submit">
+                    <input id="submit_btn" type="submit" value="注 册">
+                </div>
+
+
+            </form>
+        </div>
+    </section>
+</body>
+<script src="../../static/js/require.js" data-main="register.js"></script>
+</html>

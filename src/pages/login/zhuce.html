@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>跳转</title>
+    <script src="../../js/lib/jquery-2.0.3.js"></script>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 获取当前url中的数据
+    function getUrlParam(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+        var r = window.location.search.substr(1).match(reg); //匹配目标参数
+        if (r != null) return decodeURI(r[2]);
+        return null; //返回参数值
+    }
+    if (getUrlParam("userId")) {
+        let userId = getUrlParam("userId");
+        let userPhone = getUrlParam("userPhone");
+        let userPwd = getUrlParam("userPwd");
+        if (!localStorage.getItem("userInfo")) {
+            localStorage.setItem("userInfo", "{}");
+        }
+        let userInfo = JSON.parse(localStorage.getItem("userInfo"));
+        Object.keys(userInfo).forEach(function (key) {
+            if (key == userId) {
+                $("body").append(`<h1>这位爷，很遗憾您选的这个账号已经被抢先注册了，想揍他请联系${userInfo[key].userPhone}，就是这个B！</h1>`);
+                setTimeout(function () {
+                    window.location.href = "./login_email.html";
+                }, 3000)
+            }
+        });
+        $("body").append(`<h1>恭喜这位爷注册成功！正在跳转···</h1>`);
+        userInfo[userId] = {
+            userPhone,
+            userPwd
+        }
+        console.log(userInfo);
+        localStorage.setItem("userInfo", JSON.stringify(userInfo));
+        setTimeout(function () {
+            window.location.href = "../home/index.html";
+        }, 2000);
+
+    } else {
+        $("body").append(`<h1>对不起这位爷，出错啦！</h1>`);
+        setTimeout(function () {
+            window.history.back(-1);
+        }, 5000);
+    }
+</script>
+
+</html>

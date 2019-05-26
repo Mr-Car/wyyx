@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>网易严选</title>
+    <link rel="stylesheet" href="../../css/pages/home/index.css">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/pages/cart/cart.css">
+</head>
+
+<body>
+    <!-- 版心1090 -->
+    <!-- 网页头 开始 -->
+    <div class="head">
+        <div class="top">
+            <div>
+                <div class="top-hint">
+                    <ul id="top-hint">
+                        <li><a href=""></a></li>
+                    </ul>
+                </div>
+                <div class="top-nav">
+                    <ul>
+                        <li id="user">
+                            <a id="login" href="#">登录</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href="http://localhost:9999/pages/login/login_email.html">注册</a>
+                        </li>
+                        <li><a href="#">我的订单</a></li>
+                        <li><a href="#">会员</a></li>
+                        <li><a href="#">甄选家</a></li>
+                        <li><a href="#">企业采购</a><span class="top-nav-bgJiantou"></span></li>
+                        <li><a href="#">客户服务</a><span class="top-nav-bgJiantou"></span></li>
+                        <li><span class="top-nav-bgPhone"></span><a href="#">APP</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="fun">
+            <div>
+                <a class="logo" href="http://localhost:9999/pages/home/index.html"></a>
+                <div class="cart">
+                    <span class="icon-cart"></span>
+                    <i>购物车</i>
+                    <span class="num-cart">0</span>
+                </div>
+                <div class="search">
+                    <span class="icon-search"></span>
+                    <input class="input-search" type="search">
+                    <div class="submit-search">
+                        <span>搜索</span>
+                    </div>
+                    <div class="hint-search"></div>
+                </div>
+                <div class="hot">
+                    <div class="hotkey">
+                        <div>
+                            <a hotkey href=""></a>
+                            <a hotkey href=""></a>
+                            <a hotkey href=""></a>
+                            <a class="no-border" hotkey href=""></a>
+                        </div>
+                        <div>
+                            <a hotkey href=""></a>
+                            <a hotkey href=""></a>
+                            <a hotkey href=""></a>
+                            <a class="no-border" hotkey href=""></a>
+                        </div>
+                        <div class="hotkey1">
+                            <a hotkey href=""></a>
+                            <a hotkey href=""></a>
+                            <a hotkey href=""></a>
+                            <a class="no-border" hotkey href=""></a>
+                        </div>
+                    </div>
+                </div>
+                <script id="listOfNav" type="text/html">
+                    <div>
+                        <div class="list-details">
+                            {{each subCateGroupList}}
+                            <div class="list2">
+                                <div class="details-title">{{$value.name}}</div>
+                                {{include 'listOfNav2' $value}}
+                            </div>
+                            {{/each}}
+                        </div>
+                    </div>
+                </script>
+                <script id="listOfNav2" type="text/html">
+                    {{each categoryList}}
+                    <a class="list3"
+                        href="http://you.163.com/item/list?categoryId={{$value.superCategoryId}}&subCategoryId={{$value.id}}">
+                        <img src="{{$value.bannerUrl}}" alt="">
+                        <span>{{$value.name}}</span>
+                    </a>
+                    {{/each}}
+                </script>
+                <div id="top-nav">
+                    <ul>
+                        <li>
+                            <a class="nav-list-item" href="">首页</a>
+                        </li>
+                        <li class="segmentation"></li>
+                        <li>
+                            <a class="nav-list-item" href="">为你严选</a>
+                        </li>
+                        <li>
+                            <a class="nav-list-item" href="">众筹</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 网页头 结束 -->
+    <!-- 购物车 开始 -->
+    <div class="options">
+        <div class="container-fluid">
+            <div class="row discount ">
+                <div class="col-lg-12">购物车可领优惠券</div>
+            </div>
+            <div class="row cartHeader">
+                <div class="col-md-1"></div>
+                <div class="left col-md-3">商品信息</div>
+                <div class="col-md-2">单价</div>
+                <div class="col-md-2">数量</div>
+                <div class="col-md-2">小计</div>
+                <div class="col-md-1">操作</div>
+            </div>
+            <div class="row redemption">
+                <div class="col-lg-12">已满足【满130元可超值换购】</div>
+            </div>
+
+            <script type="text/html" id="cart">
+            <!-- 购物车模版 结束 -->
+            {{each cartInfo}}
+                <div class="row productList">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-3"><img class="list_img" src="{{$value.imgSrc}}" alt="{{$value.preId}}">
+                    <span class="pname">{{$value.pName}}</span></div>
+                    <div class="col-md-2"><span class="list_price">{{$value.pPrice}}</span></div>
+                    <div class="col-md-2">
+                        <div class="selnum">
+                            <span class="min">
+                                <i class="h"></i>
+                            </span>
+                            <input value="{{$value.pCount}}" class="num" name="cartNum" type="text">
+                            <span class="add">
+                                <i class="h"></i>
+                                <i class="s"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-md-2"><span class="list_sum">{{$value.pCount*10*$value.pPrice/10}}</span></div>
+                    <div class="op col-md-1">
+                        <a  class="addCollect">移入收藏夹</a>
+                        <a  class="delProduct">删除</a>
+                    </div>
+                </div>
+                {{/each}}
+            </script>
+            <!-- 购物车模版 结束 -->
+            <div class="row submit">
+                <div class="col-md-1"></div>
+                <div class="left col-md-3"><a class="clearAll">清空</a></div>
+                <div class="col-md-2">商品合计：<span class="totalMoney"></span></div>
+                <div class="col-md-2">应付金额：</div>
+                <div class="col-md-2"><span class="totalMoney2"></span></div>
+                <div class="btn-buy success col-md-1"><div class="sub_btn">下单</div></div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- 购物车 结束 -->
+
+
+</body>
+<script src="../../static/js/require.js" data-main="../home/index.js"></script>
+<script src="./cart.js"></script>
+
+</html>

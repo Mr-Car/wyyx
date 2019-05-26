@@ -1,0 +1,576 @@
+@import "../common.scss";
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+// 登录后
+#user {
+    position: relative;
+
+    .myInfo {
+        position: absolute;
+        top: 36px;
+        width: 83px;
+        height: 40px;
+        background: #ffffff;
+        border: 1px solid #ddd;
+        box-shadow: 0 0 3px 0 rgba(0, 0, 0, .2);
+        z-index: 999;
+
+        div {
+            width: 83px;
+            height: 38px;
+            line-height: 38px;
+            text-align: center;
+        }
+    }
+}
+
+// 登录窗口
+.login_iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+    width: 384px;
+    height: 400px;
+    z-index: 999;
+    margin-top: 100px;
+}
+
+.login_iframe iframe {
+    width: 384px;
+    height: 400px;
+}
+
+.login_close {
+    width: 24px;
+    height: 24px;
+    background: url("//yanxuan-static.nosdn.127.net/hxm/yanxuan-component/p/20170601/style/img/x1/icon-yxclose-s2ee250e88f-c6ae3be3a2.png") no-repeat 0 -94px;
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    z-index: 1000;
+}
+
+.login_mask {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #000000;
+    opacity: 0.8;
+    z-index: 998;
+}
+
+.head {
+    background: #ffffff;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, .2);
+
+    .top {
+        height: 36px;
+        background: $bg-333;
+
+        >div {
+            @extend %center;
+
+            .top-hint {
+                padding-left: 26px;
+                width: 280px;
+                height: 36px;
+                background: url("#{$imgUrl}d132c2561f18f1149d566a60d05fd9b7.gif") no-repeat left;
+                float: left;
+
+                #top-hint {
+                    li {
+                        a {
+                            line-height: 36px;
+                            font-size: 12px;
+                            text-decoration: underline;
+                            color: $wy-zong;
+
+                            &:hover {
+                                text-decoration: none;
+                                color: #ffffff;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .top-nav {
+                float: right;
+                // width: 485px;
+                height: 36px;
+
+                >ul {
+                    li {
+                        margin-left: 10px;
+                        line-height: 36px;
+                        float: left;
+                        font-size: 12px;
+                        cursor: pointer;
+
+                        a {
+                            color: #CCCCCC;
+
+                            &:hover {
+                                color: #ffffff;
+                            }
+                        }
+
+                        &::before {
+                            content: "";
+                            width: 1px;
+                            height: 16px;
+                            border-left: 1px solid #5c5c5c;
+                            margin-right: 10px;
+                            display: inline-block;
+                            vertical-align: middle;
+                        }
+
+                        &:first-child {
+                            &::before {
+                                content: "";
+                                width: 0px;
+                                border: 0;
+                                margin: 0;
+                            }
+                        }
+
+                        .top-nav-bgJiantou {
+                            display: inline-block;
+                            width: 11px;
+                            height: 5px;
+                            background: url("#{$imgUrl}icon_yxtop_sbc152a7ee5_e7ebdc8b2c.png") no-repeat;
+                            background-position: 0 -424px;
+                            transform: rotate(180deg);
+                            margin-left: 10px;
+                        }
+
+                        .top-nav-bgPhone {
+                            display: inline-block;
+                            width: 7px;
+                            height: 11px;
+                            background: url("#{$imgUrl}icon_yxtop_sbc152a7ee5_e7ebdc8b2c.png") no-repeat;
+                            background-position: 0 0px;
+                            margin-right: 5px;
+                            vertical-align: middle;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .fun {
+        height: 154px;
+
+        >div {
+            @extend %center;
+            position: relative;
+
+            .logo {
+                display: inline-block;
+                width: 124px;
+                height: 60px;
+                background: url("#{$imgUrl}icon_yxtop_sbc152a7ee5_e7ebdc8b2c.png") no-repeat 0 -202px;
+                margin-top: 24px;
+            }
+
+            .cart {
+                float: right;
+                width: 134px;
+                height: 38px;
+                margin-top: 26px;
+                margin-left: 49px;
+                border: 1px solid $wy-zong;
+                border-radius: 19px;
+                padding: 8px 0;
+                box-sizing: border-box;
+                cursor: pointer;
+                i {
+                    font-style: normal;
+                    font-size: 14px;
+                    color: $wy-zong;
+                    margin-top: -1px;
+                    display: inline-block;
+                    vertical-align: top;
+                }
+
+                .icon-cart {
+                    display: inline-block;
+                    width: 18px;
+                    height: 18px;
+                    margin-left: 22px;
+                    background: url(#{$imgUrl}#{$yxtop-icon})no-repeat 0 -114px;
+                }
+
+                .num-cart {
+                    display: inline-block;
+                    margin-left: 5px;
+                    background: url(#{$imgUrl}#{$yxtop-icon})no-repeat 0 -51px;
+                    color: #ffffff;
+                    line-height: 20px;
+                    width: 19px;
+                    height: 19px;
+                    text-align: center;
+                    font-size: 12px;
+                    vertical-align: top;
+
+                }
+            }
+
+            .search {
+                width: 532px;
+                height: 36px;
+                margin-top: 26px;
+                float: right;
+                border-radius: 19px;
+                border: 1px solid $wy-zong;
+                overflow: hidden;
+                position: relative;
+
+                .input-search {
+                    width: 442px;
+                    height: 38px;
+                    outline: none;
+                    border: 0;
+                    padding: 2px 0 2px 38px;
+                    font-size: 14px;
+                    float: left;
+                }
+
+                .submit-search {
+                    float: right;
+                    width: 90px;
+                    height: 38px;
+                    background: $wy-zong;
+                    text-align: center;
+
+                    span {
+                        color: #ffffff;
+                        font-size: 16px;
+                        line-height: 38px;
+                        cursor: pointer;
+                        letter-spacing: 1px;
+                    }
+                }
+
+                .icon-search {
+                    position: absolute;
+                    width: 14px;
+                    height: 14px;
+                    top: 12px;
+                    left: 18px;
+                    background: url("#{$imgUrl}#{$yxtop-icon}") no-repeat 0 -312px;
+                }
+
+                .hint-search {
+                    position: absolute;
+                    top: 12px;
+                    left: 38px;
+                    width: 390px;
+                    line-height: 1;
+                    text-overflow: ellipsis;
+                    pointer-events: none;
+                    touch-action: none;
+                    font-size: 14px;
+                    color: $yx-hui;
+                }
+            }
+
+            .hot {
+                overflow: hidden;
+                width: 444px;
+                height: 18px;
+                position: absolute;
+                left: 395px;
+                top: 70px;
+
+                .hotkey {
+                    a {
+                        display: inline-block;
+                        color: $yx-hui;
+                        padding: 0 10px;
+                        border-right: 1px solid #ccc;
+                        cursor: pointer;
+                        line-height: 12px;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        max-width: 444px;
+                        font-size: 12px;
+                    }
+                }
+            }
+
+            #top-nav {
+                >ul {
+                    >li {
+                        position: relative;
+                        z-index: 100;
+
+                        &:first-of-type {
+                            >a {
+                                color: $wy-zong;
+                                border-bottom: 3px solid $wy-zong;
+                            }
+
+                            padding: 0 26px 0 0;
+                        }
+
+                        &:last-of-type {
+                            padding: 0 0 0 26px;
+                        }
+
+                        float: left;
+                        font-size: 14px;
+                        padding: 0 26px;
+                        margin-top: 27px;
+                        font-weight: 700;
+
+                        >a {
+                            display: block;
+                            color: #000000;
+                            padding-bottom: 5px;
+                        }
+
+                        &:hover>a {
+                            color: $wy-zong;
+                            border-bottom: 3px solid $wy-zong;
+                        }
+
+                        .list-details {
+                            display: none;
+                            position: absolute;
+                            z-index: 100;
+                            width: 1202px;
+                            top: 27px;
+                            padding: 14px 20px 20px 20px;
+                            border: 1px solid rgba(0, 0, 0, .1);
+                            background: #ffffff;
+
+                            .list2 {
+                                width: 124px;
+                                float: left;
+                                margin-right: 24px;
+                                font-weight: normal;
+
+                                .details-title {
+                                    width: 124px;
+                                    max-width: 124px;
+                                    display: inline-block;
+                                    margin-bottom: 10px;
+                                    font-size: 16px;
+                                    font-weight: 700;
+                                    line-height: 36px;
+                                    border-bottom: 1px solid #ddd;
+                                }
+
+                                .list3 {
+                                    display: block;
+                                    font-weight: 400px;
+                                    line-height: 50px;
+
+                                    img {
+                                        width: 50px;
+                                        height: 50px;
+                                        vertical-align: top;
+                                    }
+
+                                    span {
+                                        display: inline-block;
+                                        width: 70px;
+                                        max-width: 70px;
+                                        max-height: 48px;
+                                        font-size: 14px;
+                                        vertical-align: middle;
+                                        line-height: 1.2;
+                                        overflow: hidden;
+                                        word-wrap: break-word;
+                                    }
+                                }
+                            }
+                        }
+
+
+
+                    }
+
+                    .segmentation {
+                        padding: 0;
+                        width: 1px;
+                        height: 14px;
+                        border-left: 1px solid #ccc;
+                        font-size: 12px;
+                        margin-top: 30px;
+                    }
+
+                }
+            }
+
+        }
+    }
+}
+
+// 轮播
+.banner {
+    width: 100%;
+    height: 420px;
+    overflow: hidden;
+
+    #banner_top {
+        width: 1920px;
+        position: relative;
+
+        .banner_list {
+            a {
+                display: block;
+
+                img {
+                    width: 1920px;
+                    height: 420px;
+                }
+            }
+        }
+    }
+}
+
+// 品牌制造商
+.manufacturer {
+    margin-top: 30px;
+    overflow: hidden;
+    >div {
+        @extend %center;
+
+        .man_title {
+            overflow: hidden;
+            padding-bottom: 20px;
+
+            .tit {
+                display: block;
+                float: left;
+                margin-right: 20px;
+
+                h3 {
+                    float: left;
+                    color: #000000;
+                    font-size: 28px;
+                    line-height: 28px;
+                }
+            }
+
+            span {
+                display: block;
+                padding-top: 13px;
+                float: left;
+                font-size: 14px;
+                line-height: 14px;
+            }
+
+            .man_more {
+                display: block;
+                padding-top: 14px;
+                float: right;
+                font-size: 14px;
+                line-height: 14px;
+            }
+        }
+
+        .man_list {
+            overflow: hidden;
+            .item_left {
+                margin-left: 9px !important;
+            }
+
+            .list_item {
+                float: left;
+                width: 357px;
+                height: 320px;
+                position: relative;
+                text-align: center;
+                background: #F5FAFA;
+
+                .list_name {
+                    position: relative;
+                    z-index: 10;
+                    margin: 48px 0 19px;
+
+                    .l_name {
+                        font-size: 24px;
+                        line-height: 1;
+                        color: #666;
+                    }
+
+                    .l_new {
+                        position: absolute;
+                        top: -3px;
+                        color: #ffffff;
+                        width: 32px;
+                        height: 21px;
+                        background: url("#{$imgUrl}18ccda99a6f55ef573b3fb098b4d01b8.png") no-repeat center;
+                        font-size: 12px;
+                        margin-left: 2px;
+                    }
+                }
+
+                .list_price {
+                    position: relative;
+                    z-index: 10;
+                    padding-top: 17px;
+                    border-top: 1px solid #666;
+                    font-size: 14px;
+                    width: auto;
+                    display: inline-block;
+                    color: #666;
+                }
+
+                .list_img {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                .list_img_sp {
+                    height: 190px;
+                }
+            }
+
+            .list_left {
+                height: 155px;
+                text-align: left;
+
+                .list_name {
+                    margin: 32px 0 10px 20px;
+
+                    .l_name {
+                        font-size: 20px;
+                    }
+                }
+
+                .list_price {
+                    margin-left: 20px;
+                    padding-top: 10px;
+                }
+            }
+
+            .item_top {
+                margin-top: 9px;
+            }
+        }
+    }
+}

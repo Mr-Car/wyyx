@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .login {
+            width: 384px;
+            height: 400px;
+            background: #ffffff;
+        }
+
+        .errorInfo {
+            position: absolute;
+            color: red !important;
+            font-size: 12px;
+        }
+
+        .cen {
+            width: 304px;
+            margin: 0 auto;
+        }
+
+        .option {
+            height: 20px;
+            overflow: hidden;
+            padding: 30px 0 10px 0;
+        }
+
+        .option>div {
+            width: auto;
+            float: left;
+            font-size: 18px;
+        }
+
+        .ss {
+            margin-left: 55px;
+        }
+
+        .fenge {
+            width: 1px !important;
+            height: 20px;
+            border-right: 1px solid #DDDDDD;
+        }
+
+        .switch {
+            margin-top: 10px;
+            width: 300px;
+            height: 26px;
+            padding-bottom: 6px;
+            line-height: 26px;
+            font-size: 12px;
+            overflow: hidden;
+        }
+
+        .switch p {
+            width: 96px;
+            height: 26px;
+            float: right;
+            ;
+        }
+
+        form>div {
+            height: 36px;
+            width: 300px;
+            overflow: hidden;
+            border: 1px solid #E8E8E8;
+            border-radius: 2px;
+        }
+
+        form input {
+            float: left;
+            width: 222px;
+            height: 36px;
+            padding: 0;
+            border: 0;
+            padding-left: 8px;
+        }
+
+        .h {
+            margin-top: 15px;
+        }
+
+        .icon {
+            float: left;
+            width: 29px;
+            height: 24px;
+            padding: 7px 0 7px 7px;
+        }
+
+        .icon div {
+            width: 21px;
+            height: 24px;
+            padding-right: 7px;
+            border-right: 1px solid #E8E8E8;
+        }
+
+        .sub {
+            height: 48px;
+            border: 0;
+            margin: 40px 0 11px 0;
+        }
+
+        .sub input {
+            padding: 0;
+            font-size: 18px;
+            width: 300px;
+            height: 48px;
+            border: 0;
+            background: #B4A078;
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login">
+        <div class="cen">
+            <div class="option">
+                <div>手机号登录</div>
+                <div class="ss fenge"></div>
+                <div class="ss">邮箱登录</div>
+            </div>
+            <div class="switch">
+                <p>使用短信验证码登录</p>
+            </div>
+            <form action="#">
+                <div>
+                    <div class="icon">
+                        <div></div>
+                    </div>
+                    <input type="text" name="phone" id="phone" placeholder="请输入手机号">
+                </div>
+                <div class="h">
+                    <div class="icon">
+                        <div></div>
+                    </div>
+                    <input type="password" name="psw" id="psw" placeholder="请输入密码">
+                </div>
+                <div class="sub">
+                    <input id="submit" type="submit" value="登 录">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+<script src="../../static/js/require.js" data-main="login.js"></script>
+
+</html>
